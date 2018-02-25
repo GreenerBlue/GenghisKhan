@@ -20,6 +20,9 @@ public class FassyWidget extends AppWidgetProvider {
 
             RemoteViews views= new RemoteViews(context.getPackageName(),R.layout.app_widget_layout);
             views.setOnClickPendingIntent(R.id.button,pit);
+            Intent listIntent = new Intent(context,WidgetService.class);
+            listIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID,i);
+            views.setRemoteAdapter(i,R.id.list1,listIntent);
             appWidgetManager.updateAppWidget(i,views);
         }
     }

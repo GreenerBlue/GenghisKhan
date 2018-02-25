@@ -3,6 +3,7 @@ package com.testing.atul.genghiskhan;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 /**
  * Created by Atul on 2/19/2018.
@@ -20,7 +21,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS "+ FeedContract.FeedEntry.TABLE_NAME+" ("+
                 FeedContract.FeedEntry._ID+" INTEGER PRIMARY KEY,"+
-                FeedContract.FeedEntry.COL_NAME+ "TEXT)");
+                FeedContract.FeedEntry.COL_NAME+ " TEXT)");
+        Log.d("gun", FeedContract.FeedEntry.TABLE_NAME);
     }
 
     @Override
